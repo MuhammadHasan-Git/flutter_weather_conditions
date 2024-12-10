@@ -16,6 +16,12 @@ class _RainAnimationState extends State<RainAnimation>
   List<RainDrop> _raindrops = [];
 
   @override
+  void didChangeDependencies() {
+    _initializeRaindrops();
+    super.didChangeDependencies();
+  }
+
+  @override
   void initState() {
     super.initState();
 
@@ -24,7 +30,7 @@ class _RainAnimationState extends State<RainAnimation>
       duration: const Duration(milliseconds: 80),
     )..addListener(
         () {
-          final height = MediaQuery.sizeOf(context).height;
+          final height = MediaQuery.of(context).size.height;
           setState(() {
             for (var drop in _raindrops) {
               drop.update(height);
@@ -33,12 +39,11 @@ class _RainAnimationState extends State<RainAnimation>
         },
       );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => _initializeRaindrops());
     _controller.repeat();
   }
 
   void _initializeRaindrops() {
-    final size = MediaQuery.sizeOf(context);
+    final size = MediaQuery.of(context).size;
     _raindrops = List.generate(
       150,
       (index) {
@@ -61,8 +66,6 @@ class _RainAnimationState extends State<RainAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: RainPainter(_raindrops, widget.dropColor),
-    );
+    return CustomPaint(painter: RainPainter(_raindrops, widget.dropColor));
   }
 }

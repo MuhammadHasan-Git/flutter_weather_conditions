@@ -79,9 +79,9 @@ class _SnowAnimationState extends State<SnowAnimation>
   double angle = 0;
 
   @override
-  void initState() {
+  void didChangeDependencies() {
     init();
-    super.initState();
+    super.didChangeDependencies();
   }
 
   Future<void> _replaceSnowBallWithNewParameters(int previousTotalSnow) async {
@@ -106,10 +106,9 @@ class _SnowAnimationState extends State<SnowAnimation>
   }
 
   Future<void> init({bool hasInit = false, int previousTotalSnow = 0}) async {
-    W = WidgetsBinding
-        .instance.platformDispatcher.views.single.physicalSize.width;
-    H = WidgetsBinding
-        .instance.platformDispatcher.views.single.physicalSize.height;
+    final Size size = MediaQuery.of(context).size;
+    W = size.width;
+    H = size.height;
 
     if (hasInit) {
       /// only reset balls after the first init is done
@@ -228,7 +227,6 @@ class _SnowAnimationState extends State<SnowAnimation>
 
       return CustomPaint(
         willChange: widget.isRunning,
-        isComplex: true,
         size: Size.infinite,
         painter: SnowPainter(
           isRunning: widget.isRunning,

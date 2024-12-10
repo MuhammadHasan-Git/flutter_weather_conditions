@@ -80,7 +80,7 @@ class _LightningEffectState extends State<LightningEffect>
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.sizeOf(context);
+    final Size size = MediaQuery.of(context).size;
 
     return FadeTransition(
       opacity: _opacityAnimation,

@@ -8,11 +8,6 @@ import 'package:flutter_weather_conditions/core/utils/colors.dart';
 import 'package:flutter_weather_conditions/interfaces/weather.dart';
 import 'package:flutter_weather_conditions/model/weather_model.dart';
 
-final double width =
-    WidgetsBinding.instance.platformDispatcher.views.single.physicalSize.width;
-final double height =
-    WidgetsBinding.instance.platformDispatcher.views.single.physicalSize.width;
-
 class Day implements Weather {
   @override
   WeatherModel getWeather() => WeatherModel(
@@ -45,7 +40,7 @@ class CloudyDay implements Weather {
         weatherStatus: 'Cloudy (Day)',
         backgroundColors: cloudyDay,
         foreground: Image.asset(
-          width: width,
+          width: double.infinity,
           fit: BoxFit.fitWidth,
           'assets/images/day_cloudy.webp',
         ),
@@ -58,7 +53,7 @@ class CloudyNight implements Weather {
         weatherStatus: 'Cloudy (Night)',
         backgroundColors: cloudyNight,
         foreground: Image.asset(
-          width: width,
+          width: double.infinity,
           fit: BoxFit.fitWidth,
           'assets/images/night_cloudy.webp',
         ),
@@ -117,7 +112,7 @@ class DayOvercast implements Weather {
         weatherStatus: 'Overcast (Day)',
         backgroundColors: dayOvercast,
         foreground: Image.asset(
-          width: width,
+          width: double.infinity,
           fit: BoxFit.fitWidth,
           'assets/images/day_overcast.webp',
         ),
@@ -130,7 +125,7 @@ class NightOvercast implements Weather {
         weatherStatus: 'Overcast (Night)',
         backgroundColors: nightOvercast,
         foreground: Image.asset(
-          width: width,
+          width: double.infinity,
           fit: BoxFit.fitWidth,
           'assets/images/night_overcast.webp',
         ),
@@ -145,7 +140,7 @@ class DayRain implements Weather {
         foreground: Stack(
           children: [
             Image.asset(
-              width: width,
+              width: double.infinity,
               fit: BoxFit.fitWidth,
               'assets/images/day_rain.webp',
             ),
@@ -163,7 +158,7 @@ class NightRain implements Weather {
         foreground: Stack(
           children: [
             Image.asset(
-              width: width,
+              width: double.infinity,
               fit: BoxFit.fitWidth,
               'assets/images/night_rain.webp',
             ),
@@ -182,7 +177,7 @@ class DayThunderstorm implements Weather {
           children: [
             const LightningEffect(),
             Image.asset(
-              width: width,
+              width: double.infinity,
               fit: BoxFit.fitWidth,
               'assets/images/day_rain.webp',
             ),
@@ -201,7 +196,7 @@ class NightThunderstorm implements Weather {
           children: [
             const LightningEffect(),
             Image.asset(
-              width: width,
+              width: double.infinity,
               fit: BoxFit.fitWidth,
               'assets/images/night_rain.webp',
             ),
