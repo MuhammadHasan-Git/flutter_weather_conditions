@@ -8,6 +8,11 @@ import 'package:flutter_weather_conditions/core/utils/colors.dart';
 import 'package:flutter_weather_conditions/interfaces/weather.dart';
 import 'package:flutter_weather_conditions/model/weather_model.dart';
 
+final double width =
+    WidgetsBinding.instance.platformDispatcher.views.single.physicalSize.width;
+final double height =
+    WidgetsBinding.instance.platformDispatcher.views.single.physicalSize.width;
+
 class Day implements Weather {
   @override
   WeatherModel getWeather() => WeatherModel(
@@ -40,9 +45,9 @@ class CloudyDay implements Weather {
         weatherStatus: 'Cloudy (Day)',
         backgroundColors: cloudyDay,
         foreground: Image.asset(
+          width: width,
+          fit: BoxFit.fitWidth,
           'assets/images/day_cloudy.webp',
-          gaplessPlayback: true,
-          repeat: ImageRepeat.repeat,
         ),
       );
 }
@@ -53,9 +58,9 @@ class CloudyNight implements Weather {
         weatherStatus: 'Cloudy (Night)',
         backgroundColors: cloudyNight,
         foreground: Image.asset(
+          width: width,
+          fit: BoxFit.fitWidth,
           'assets/images/night_cloudy.webp',
-          gaplessPlayback: true,
-          repeat: ImageRepeat.repeat,
         ),
       );
 }
@@ -111,7 +116,11 @@ class DayOvercast implements Weather {
   WeatherModel getWeather() => WeatherModel(
         weatherStatus: 'Overcast (Day)',
         backgroundColors: dayOvercast,
-        foreground: Image.asset('assets/images/day_overcast.webp'),
+        foreground: Image.asset(
+          width: width,
+          fit: BoxFit.fitWidth,
+          'assets/images/day_overcast.webp',
+        ),
       );
 }
 
@@ -120,7 +129,11 @@ class NightOvercast implements Weather {
   WeatherModel getWeather() => WeatherModel(
         weatherStatus: 'Overcast (Night)',
         backgroundColors: nightOvercast,
-        foreground: Image.asset('assets/images/night_overcast.webp'),
+        foreground: Image.asset(
+          width: width,
+          fit: BoxFit.fitWidth,
+          'assets/images/night_overcast.webp',
+        ),
       );
 }
 
@@ -131,7 +144,11 @@ class DayRain implements Weather {
         backgroundColors: dayRain,
         foreground: Stack(
           children: [
-            Image.asset('assets/images/day_rain.webp'),
+            Image.asset(
+              width: width,
+              fit: BoxFit.fitWidth,
+              'assets/images/day_rain.webp',
+            ),
             const RainAnimation(dropColor: Colors.white12),
           ],
         ),
@@ -145,14 +162,18 @@ class NightRain implements Weather {
         backgroundColors: cloudyNight,
         foreground: Stack(
           children: [
-            Image.asset('assets/images/night_rain.webp'),
+            Image.asset(
+              width: width,
+              fit: BoxFit.fitWidth,
+              'assets/images/night_rain.webp',
+            ),
             const RainAnimation(dropColor: Colors.white10),
           ],
         ),
       );
 }
 
-class DayRainWithThunder implements Weather {
+class DayThunderstorm implements Weather {
   @override
   WeatherModel getWeather() => WeatherModel(
         weatherStatus: 'Thunderstorm (Day)',
@@ -160,14 +181,18 @@ class DayRainWithThunder implements Weather {
         foreground: Stack(
           children: [
             const LightningEffect(),
-            Image.asset('assets/images/day_rain.webp'),
+            Image.asset(
+              width: width,
+              fit: BoxFit.fitWidth,
+              'assets/images/day_rain.webp',
+            ),
             const RainAnimation(dropColor: Colors.white12),
           ],
         ),
       );
 }
 
-class NightRainWithThunder implements Weather {
+class NightThunderstorm implements Weather {
   @override
   WeatherModel getWeather() => WeatherModel(
         weatherStatus: 'Thunderstorm (Night)',
@@ -175,7 +200,11 @@ class NightRainWithThunder implements Weather {
         foreground: Stack(
           children: [
             const LightningEffect(),
-            Image.asset('assets/images/night_rain.webp'),
+            Image.asset(
+              width: width,
+              fit: BoxFit.fitWidth,
+              'assets/images/night_rain.webp',
+            ),
             const RainAnimation(dropColor: Colors.white10),
           ],
         ),

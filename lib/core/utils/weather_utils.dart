@@ -5,8 +5,8 @@ import 'package:flutter_weather_conditions/model/weather_model.dart';
 // Centralized definition of weather types
 class WeatherDefinitions {
   static final List<Weather> weatherTypes = [
-    NightRainWithThunder(),
-    DayRainWithThunder(),
+    NightThunderstorm(),
+    DayThunderstorm(),
     NightRain(),
     DayRain(),
     NightSnow(),
