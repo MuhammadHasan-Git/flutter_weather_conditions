@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_weather_conditions/core/components/painter/snow_painter.dart';
+import 'package:flutter_weather_conditions/core/painter/snow_painter.dart';
 import 'package:flutter_weather_conditions/model/snow_ball.dart';
 
 const double angleIncrementation = 0.01;

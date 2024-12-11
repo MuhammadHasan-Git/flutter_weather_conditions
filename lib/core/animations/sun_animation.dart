@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_weather_conditions/core/components/painter/sun_painter.dart';
+import 'package:flutter_weather_conditions/core/painter/sun_painter.dart';
 
 class SunAnimation extends StatefulWidget {
   const SunAnimation({super.key});

@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_weather_conditions/core/components/painter/rain_drop.dart';
+import 'package:flutter_weather_conditions/core/painter/rain_drop.dart';
 
 class RainAnimation extends StatefulWidget {
   final Color dropColor;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_weather_conditions/core/components/animations/lightning_aniamtion.dart';
-import 'package:flutter_weather_conditions/core/components/animations/rain_animation.dart';
-import 'package:flutter_weather_conditions/core/components/animations/snow_animation.dart';
-import 'package:flutter_weather_conditions/core/components/animations/start_animation.dart';
-import 'package:flutter_weather_conditions/core/components/animations/sun_animation.dart';
+import 'package:flutter_weather_conditions/core/animations/lightning_aniamtion.dart';
+import 'package:flutter_weather_conditions/core/animations/rain_animation.dart';
+import 'package:flutter_weather_conditions/core/animations/snow_animation.dart';
+import 'package:flutter_weather_conditions/core/animations/start_animation.dart';
+import 'package:flutter_weather_conditions/core/animations/sun_animation.dart';
 import 'package:flutter_weather_conditions/core/utils/colors.dart';
 import 'package:flutter_weather_conditions/interfaces/weather.dart';
 import 'package:flutter_weather_conditions/model/weather_model.dart';

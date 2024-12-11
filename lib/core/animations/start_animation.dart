@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_weather_conditions/core/components/painter/star_painter.dart';
+import 'package:flutter_weather_conditions/core/painter/star_painter.dart';
 
 class SparklingStarAnimation extends StatefulWidget {
   const SparklingStarAnimation({super.key});
