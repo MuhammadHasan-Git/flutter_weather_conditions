@@ -7,10 +7,10 @@ class WeatherDefinitions {
   static final List<Weather> weatherTypes = [
     NightThunderstorm(),
     DayThunderstorm(),
-    NightRain(),
-    DayRain(),
     NightSnow(),
     DaySnow(),
+    NightRain(),
+    DayRain(),
     SunnyDay(),
     Night(),
     Day(),

@@ -84,6 +84,7 @@ class DaySnow implements Weather {
         foreground: const SnowAnimation(
           totalSnow: 100,
           maxRadius: 1.5,
+          hasSpinningEffect: true,
           speed: 0.6,
           isRunning: true,
           snowColor: white,
@@ -99,6 +100,7 @@ class NightSnow implements Weather {
         foreground: const SnowAnimation(
           totalSnow: 100,
           maxRadius: 1.5,
+          hasSpinningEffect: true,
           speed: 0.6,
           isRunning: true,
           snowColor: white,
@@ -144,7 +146,10 @@ class DayRain implements Weather {
               fit: BoxFit.fitWidth,
               'assets/images/day_rain.webp',
             ),
-            const RainAnimation(dropColor: Colors.white12),
+            const RainAnimation(
+              dropColor: Colors.white12,
+              totalDrops: 90,
+            ),
           ],
         ),
       );
@@ -162,7 +167,10 @@ class NightRain implements Weather {
               fit: BoxFit.fitWidth,
               'assets/images/night_rain.webp',
             ),
-            const RainAnimation(dropColor: Colors.white10),
+            const RainAnimation(
+              dropColor: Colors.white10,
+              totalDrops: 90,
+            ),
           ],
         ),
       );

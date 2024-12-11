@@ -13,8 +13,8 @@ class RainDrop {
     required this.velocity,
   });
 
-  void update(double screenHeight) {
-    y += velocity;
+  void update(double screenHeight, double deltaTime, double speedMultiplier) {
+    y += velocity * deltaTime * speedMultiplier;
     if (y > screenHeight + length) {
       y = -length;
     }
